@@ -1,7 +1,7 @@
 # Esse script serve para você executar as mesmas configurações para os switches que você queira configurar. 
 
 ...
-Para analisarmos a lógica na qual são executados comandos para printar o conteúdo de um arquivo, o código abaixo simula essa lógica.
+Para analisarmos a lógica na qual são executados comandos para printar o conteúdo de um arquivo (.txt), o código abaixo simula essa lógica.
 
 for line in f:
   print(line)
