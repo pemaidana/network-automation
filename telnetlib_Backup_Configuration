@@ -1,3 +1,5 @@
+# Esse script serve para fazer backup de configuração nos devices.
+
 import getpass
 #import sys
 import telnetlib
