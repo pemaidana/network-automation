@@ -1,6 +1,6 @@
 # A library netmiko simplifica a library paramiko.
   
-Para começar o embasamento da library netmiko, é preciso entendermos alguns parâmetros.
+# Para começar o embasamento da library netmiko, é preciso entendermos alguns parâmetros.
 
 from netmiko import ConnectHandler # Importando o módulo ConnectHandler
 
@@ -16,7 +16,7 @@ cisco_881 = { # Essa classe cisco_881 se refere ao hostname no qual estou me con
 
 
 # Estabelecendo uma conexão SSH baseado no bloco de dicionário acima
-net_connect = ConnectHandler ( ** cisco_881)
+net_connect = ConnectHandler (**cisco_881)
 
 # Executando comandos show
 output = net_connect.send_command('show ip int brief')
@@ -33,11 +33,12 @@ Vlan1                      unassigned      YES unset  down                  down
 
 
 # Executando comandos de configuração (entrará automaticamente no modo de configuração do device)
+# A parâmetrização da variável config_commands serve para enviar comandos de configuração para o device remoto
 config_commands = [ 'logging buffered 20000',
                     'logging buffered 20010',
                     'no logging console' ]
-output = net_connect.send_config_set(config_commands)
-print(output)
+output = net_connect.send_config_set(config_commands) # Nessa linha os dados são lidos com base na variável "config_commands"
+print(output) # Imprimindo os dados alocados na varíavel acima 
 
 # Verificando a saída do comando via simução de CLI
 pynet-rtr1#config term
