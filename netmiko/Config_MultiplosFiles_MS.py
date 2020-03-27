@@ -1,7 +1,3 @@
-# O arquivo iosv_l2_access está sendo setado uma configuração que irá ser replicado para os devices iosv_l2_s5, iosv_l2_s4, iosv_l2_s3
-# O arquivo iosv_l2_core está sendo setado uma configuração que irá ser replicado para os devices iosv_l2_s2, iosv_l2_s1
-
-
 from netmiko import ConnectHandler
 
 iosv_l2_s1 = {
