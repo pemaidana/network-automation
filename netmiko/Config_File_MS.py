@@ -17,8 +17,6 @@ switchport mode trunk
 switchport nonegotiate
 switchport trunk allowed vlan 1,2
 
-
-
 from netmiko import ConnectHandler
 
 iosv_l2_s1 = {
@@ -43,11 +41,7 @@ iosv_l2_s3 = {
 }
 
 
-# Inserindo o parâmetro open e alocando uma valor, esse valor é referente ao nome do arquivo
-with open('iosv_l2_config1') as f: O arquivo é representado pelo caractere f
-    
-    # A variável lines representa o caractere f que por si só está sendo atribuído uma função ".read()". Essa função serve para ler os dados que estão sendo analisados 
-    # Depois é atribuído a função ".splitlines()". Essa função retorna o valor que está sendo lido
+with open('iosv_l2_config1') as f: 
     lines = f.read().splitlines()
 print lines 
 

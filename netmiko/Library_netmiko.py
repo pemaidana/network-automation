@@ -1,28 +1,20 @@
-# A library netmiko simplifica a library paramiko.
-  
-# Para começar o embasamento da library netmiko, é preciso entendermos alguns parâmetros.
-
 from netmiko import ConnectHandler # Importando o módulo ConnectHandler
 
 # Criando um bloco de dicionário representando a conexão SSH de um device
-cisco_881 = { # Essa classe cisco_881 se refere ao hostname no qual estou me conectando.
-    'device_type': 'cisco_ios', # Declarando o módulo do tipo de IOS que estou interagindo com base nos módulos de dicionário Python.
+cisco_881 = { 
+    'device_type': 'cisco_ios', 
     'host':   '10.10.10.10',
     'username': 'test',
     'password': 'password',
-    'port' : 8022,          # optional, defaults to 22
-    'secret': 'secret',     # optional, defaults to ''
+    'port' : 22,          
+    'secret': 'secret',     # opcional
 }
 
 
-# Estabelecendo uma conexão SSH baseado no bloco de dicionário acima
 net_connect = ConnectHandler (**cisco_881)
-
-# Executando comandos show
 output = net_connect.send_command('show ip int brief')
 print(output)
 
-# Verificando a saída do comando
 Interface                  IP-Address      OK? Method Status                Protocol
 FastEthernet0              unassigned      YES unset  down                  down
 FastEthernet1              unassigned      YES unset  down                  down
@@ -32,8 +24,6 @@ FastEthernet4              10.10.10.10     YES manual up                    up
 Vlan1                      unassigned      YES unset  down                  down
 
 
-# Executando comandos de configuração (entrará automaticamente no modo de configuração do device)
-# A parâmetrização da variável config_commands serve para enviar comandos de configuração para o device remoto
 config_commands = [ 'logging buffered 20000',
                     'logging buffered 20010',
                     'no logging console' ]
@@ -41,17 +31,13 @@ output = net_connect.send_config_set(config_commands) # Nessa linha os dados sã
 print(output) # Imprimindo os dados alocados na varíavel acima 
 
 # Verificando a saída do comando via simução de CLI
-pynet-rtr1#config term
+rt#config term
 Enter configuration commands, one per line.  End with CNTL/Z.
-pynet-rtr1(config)#logging buffered 20000
-pynet-rtr1(config)#logging buffered 20010
-pynet-rtr1(config)#no logging console
-pynet-rtr1(config)#end
-pynet-rtr1#
-
-# Vale ressaltar que a simulação do script pode ser feita via aplicação jupyter, isso ajuda a entender se o script vai ser executado da maneira que queremos.
-
-
+rt(config)#logging buffered 20000
+rt(config)#logging buffered 20010
+rt(config)#no logging console
+rt(config)#end
+rt#
 
 # Módulos de dicionário python que são suportados como device_types da library netmiko
 

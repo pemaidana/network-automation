@@ -24,7 +24,7 @@ try:
 except Exception as e: 
     print(e)
 
-    # Ao executar o script, tivemos o seguinte retorno...
+    # retorno...
   [
   {
     "vlan_id": "1",
@@ -68,18 +68,7 @@ except Exception as e:
   }
 ]
 
-
-
-
 # Analisando outro script
-
-import os
-import json
-from netmiko import ConnectHandler
-
-user = os.environ.get('username')
-pw = os.environ.get('password')
-sec = os.environ.get('secret')
 
 cisco_881 = {
     'device_type': 'cisco_ios_telnet', 
@@ -90,7 +79,6 @@ cisco_881 = {
     'port': 23         
 }
 
-# Analizando outros parâmetros
 try: 
     net_connect = ConnectHandler (**cisco_881)
     net_connect.enable() 
@@ -99,7 +87,7 @@ try:
     print(json.dumps(stps, indent=2))
     for stp in stps:
         print(' ') # Espaçamento das linhas
-        # Estamos printando os parâmetros da saída da CLI. queremos definir a vlan que interface pertence e se a interface está em modo de designated.
+        # printando os parâmetros da saída da CLI. queremos definir a vlan que a interface pertence e se a interface está em modo de designated.
         print(f"{stp['interface']}.{stp['vlan_id']} is currently in role {stp['role']} ")
     
 except Exception as e: 

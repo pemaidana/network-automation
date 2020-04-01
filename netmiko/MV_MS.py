@@ -22,10 +22,7 @@ iosv_l2_s3 = {
 }
 
 
-# Decarando uma variável e alocando ela aos dicionários
 all_devices = [iosv_l2_s1, iosv_l2_s2, iosv_l2_s3]
-
-# Criando um parâmetro que representa a variável all_devices
 for devices in all_devices:
     net_connect = ConnectHandler(**devices) # Chamando o parâmetro "devices" para abrir conexão SSH
     for n in range (2,21):
