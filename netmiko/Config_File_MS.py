@@ -43,7 +43,7 @@ iosv_l2_s3 = {
 
 with open('iosv_l2_config1') as f: 
     lines = f.read().splitlines()
-print lines 
+print (lines)
 
 # Criando uma variável para chamar as conexões SSH
 all_devices = [iosv_l2_s1, iosv_l2_s2, iosv_l2_s3]
@@ -53,4 +53,4 @@ for devices in all_devices:
     
     # Nesse momento a conexão com o primeiro dicionário foi iniciada e com isso chamamos a função "net_connect.send_config_set", essa função envia comandos para o device, e em seguida alocamos dentro dessa função a variável "lines", dentro dessa variável está sendo alocados os comandos que deverão ser executados pela função
     output = net_connect.send_config_set(lines)
-    print output # Printa a saída dos comandos que foram executados. 
+    print (output) # Printa a saída dos comandos que foram executados. 
