@@ -1,0 +1,4 @@
+TriggerShutNoShutBgp:
+  source:
+    class: testcases.shutnoshut.ShutNoShutBgp
+  devices: ['uut']
