@@ -1,0 +1,19 @@
+--- working_state/SW_CORE_1_sh-vlan_parsed.txt
++++ misbehaving_state/SW_CORE_1_sh-vlan_parsed.txt
+ vlans:
++ 80: 
++  mtu: 1500
++  name: VLAN0080
++  said: 100080
++  shutdown: False
++  state: active
++  trans1: 0
++  trans2: 0
++  type: enet
++  vlan_id: 80
++ 90: 
++  mtu: 1500
++  said: 100090
++  trans1: 0
++  trans2: 0
++  type: enet

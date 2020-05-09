@@ -1,0 +1,51 @@
+devices:
+  SW_CORE_1:
+    type: switch
+    os: ios
+    platform: iosl2
+    alias: sw1_dev
+    tacacs:
+      login_prompt: 'login:'
+      password_prompt: 'Password:'
+      username: teste
+    passwords:
+      tacacs: teste
+    connections:
+      cli:
+        protocol: ssh
+        ip: 192.168.36.214
+        port: 22
+  
+  SW_CORE_2:
+    type: switch
+    os: ios
+    platform: iosl2
+    alias: sw2_dev
+    tacacs:
+      login_prompt: 'login:'
+      password_prompt: 'Password:'
+      username: teste
+    passwords:
+      tacacs: teste
+    connections:
+      cli:
+        protocol: ssh
+        ip: 192.168.36.215
+        port: 22
+
+  SW_ACCESS_1:
+    type: switch
+    os: ios
+    platform: iosl2
+    alias: utt
+    tacacs:
+      login_prompt: 'login:'
+      password_prompt: 'Password:'
+      username: teste
+    passwords:
+      tacacs: teste
+    connections:
+      cli:
+        protocol: ssh
+        ip: 192.168.36.210
+        port: 22
